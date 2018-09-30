@@ -20,6 +20,10 @@ io.on('connection', (socket) => {
         socket.broadcast.emit('typing', data);
     });
 
+    socket.on('notTyping', () => {
+        socket.broadcast.emit('notTyping');
+    });
+
 });
 
 server.listen(port, () => {
